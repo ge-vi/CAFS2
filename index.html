@@ -18,10 +18,19 @@
 
         .box {
             background-color: #fff;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid silver;
+            padding: 2rem;
         }
 
         .logo {
             width: 100px;
+        }
+
+        .headline {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
         }
 
         nav ul {
@@ -45,8 +54,12 @@
             display: flex;
         }
 
-        .flex-reverse {
-            flex-direction: row-reverse;
+        .p1-l {
+            padding-left: 1rem;
+        }
+
+        .p1-r {
+            padding-right: 1rem;
         }
 
         .p2 {
@@ -61,9 +74,6 @@
             background-color: white;
         }
 
-        .border-silver {
-            border: 1px solid silver;
-        }
         .text-center {
             text-align: center;
         }
@@ -74,7 +84,7 @@
 
 <div class="wrapper p2">
 
-    <header class="bg-white flex-split-items">
+    <header class="bg-white p1-l p1-r flex-split-items">
         <img src="/img/logo.png" alt="logo" class="logo">
 
         <nav>
@@ -86,13 +96,13 @@
         </nav>
     </header>
 
-    <section class="box">
+    <section class="box headline">
         <h1 class="text-center">SUPER HEADLINE</h1>
         <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, neque?</p>
     </section>
 
     <section class="box">
-        <article class="flex-split-items">
+        <article class="flex">
             <aside>
 
                 <h2>Headline</h2>
@@ -101,21 +111,29 @@
                     eligendi esse eum modi nemo repudiandae vero.</p>
             </aside>
             <aside>
-                <img src="https://via.placeholder.com/150" alt="">
+                <img src="https://via.placeholder.com/150" alt="placeholder" class="p1-l">
             </aside>
         </article>
     </section>
 
     <section class="box">
-        <article class="flex-split-items flex-reverse">
+        <article class="flex">
+            <aside>
+                <img src="https://via.placeholder.com/150" alt="placeholder" class="p1-r">
+            </aside>
             <aside>
 
                 <h2>Headline</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias amet aspernatur doloribus
-                    eligendi esse eum modi nemo repudiandae vero.</p>
-            </aside>
-            <aside>
-                <img src="https://via.placeholder.com/150" alt="">
+
+                <ul>
+                    <li>Lorem ipsum dolor sit amet.</li>
+                    <li>Lorem ipsum dolor sit amet.</li>
+                    <li>Lorem ipsum dolor sit amet.</li>
+                    <li>Lorem ipsum dolor sit amet.</li>
+                    <li>Lorem ipsum dolor sit amet.</li>
+                </ul>
+
+
             </aside>
         </article>
     </section>
