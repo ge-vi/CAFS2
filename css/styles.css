@@ -45,6 +45,13 @@ nav ul a {
     display: flex;
 }
 
+.m1-l {
+    margin-left: 1rem;
+}
+.m1-r {
+    margin-right: 1rem;
+}
+
 .p1-l {
     padding-left: 1rem;
 }
