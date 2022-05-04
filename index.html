@@ -4,65 +4,125 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Document</title>
+    <title>day4, task1: html5 page structure</title>
+
     <style>
+        body {
+            font-family: sans-serif;
+        }
+
         .wrapper {
             width: 80%;
             margin: 0 auto;
         }
 
-        .w40 {
-            width: 40%;
-            display: inline-block;
+        .box {
+            background-color: #fff;
         }
+
+        .logo {
+            width: 100px;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul a {
+            padding: 1rem;
+
+            text-decoration: none;
+            color: black;
+        }
+
+        .flex-split-items {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .flex-reverse {
+            flex-direction: row-reverse;
+        }
+
+        .p2 {
+            padding: 2rem;
+        }
+
+        .bg-light {
+            background-color: #e5e5e5;
+        }
+
+        .bg-white {
+            background-color: white;
+        }
+
+        .border-silver {
+            border: 1px solid silver;
+        }
+        .text-center {
+            text-align: center;
+        }
+
     </style>
 </head>
-<body>
+<body class="bg-light">
 
-<div class="wrapper">
+<div class="wrapper p2">
 
-    <h1>Lorem ipsum dolor sit amet</h1>
+    <header class="bg-white flex-split-items">
+        <img src="/img/logo.png" alt="logo" class="logo">
 
-    <p>Consectetur adipisicing elit. Aspernatur at consequuntur cupiditate <a
-            href="https://lt.wikipedia.org/wiki/Lorem_ipsum">lorem ipsum</a>, ea exercitationem facere ipsa itaque,
-        molestiae non numquam, officia quam quia quos sint sit sunt temporibus totam!</p>
+        <nav>
+            <ul class="flex">
+                <li><a href="#">Menu item 1</a></li>
+                <li><a href="#">Menu item 2</a></li>
+                <li><a href="#">Menu item 3</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">HTML elements reference</a></p>
+    <section class="box">
+        <h1 class="text-center">SUPER HEADLINE</h1>
+        <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, neque?</p>
+    </section>
 
-    <ul>
-        <li>Unordered list item 1</li>
-        <li>Unordered list item 2</li>
-        <li>Unordered list item 3</li>
-        <li>Unordered list item 4</li>
-        <li>Unordered list item 5</li>
-    </ul>
+    <section class="box">
+        <article class="flex-split-items">
+            <aside>
 
-    <ol>
-        <li>Ordered list item</li>
-        <li>Ordered list item</li>
-        <li>Ordered list item</li>
-        <li>Ordered list item</li>
-        <li>Ordered list item</li>
-    </ol>
+                <h2>Headline</h2>
 
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias amet aspernatur doloribus
+                    eligendi esse eum modi nemo repudiandae vero.</p>
+            </aside>
+            <aside>
+                <img src="https://via.placeholder.com/150" alt="">
+            </aside>
+        </article>
+    </section>
 
-    <div class="wrapper">
-        <div class="w40">
-            <img src="https://picsum.photos/400/225" alt="Lorem Picsum">
-        </div>
-        <div class="w40">
-            <video controls width="400">
+    <section class="box">
+        <article class="flex-split-items flex-reverse">
+            <aside>
 
-                <source src="/media/sample-5s.webm"
-                        type="video/webm">
+                <h2>Headline</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias amet aspernatur doloribus
+                    eligendi esse eum modi nemo repudiandae vero.</p>
+            </aside>
+            <aside>
+                <img src="https://via.placeholder.com/150" alt="">
+            </aside>
+        </article>
+    </section>
 
-                <source src="/media/sample-5s.webm"
-                        type="video/mp4">
-
-                Sorry, your browser doesn't support embedded videos.
-            </video>
-        </div>
-    </div>
+    <footer class="box">
+        <p class="text-center">All rights reserved</p>
+    </footer>
 
 </div>
 
