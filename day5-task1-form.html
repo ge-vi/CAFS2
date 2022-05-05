@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Form</title>
+    <style>
+        form label {
+            display: block;
+        }
+        form div {
+            margin-bottom: 1rem;
+        }
+        form input,
+        form select {
+            width: 200px;
+        }
+
+    </style>
+</head>
+<body>
+
+<!--
+Suprogramuokite HTML formą, kuri turės galimybę vartotojui nurodyti:
+
+    Vardą ir pavardę (atskiruose laukuose);
+    El. paštą;
+    Telefono numerį;
+    Išsiskleidžiantį sąrašą (su 3 paslaugomis, pvz.: automobilio nuoma/dviračio nuoma/paspirtuko nuoma);
+    Galimybę nurodyti datą nuo kada ketinama nuomoti;
+    Galimybę nurodyti datą iki kada ketinama nuomoti;
+    Galimybę pasirinkti miestą iš išsiskleidžiančio sąrašo, kuriame atsiims transporto priemonę (Vilnius, Kaunas, Klaipėda);
+    Galimybę pateikti formą.
+-->
+
+
+<form action="#">
+
+    <div>
+        <label for="fname">Vardas</label>
+        <input type="text" name="fname" id="fname" value="Vardenis">
+    </div>
+
+    <div>
+        <label for="lname">Pavardė</label>
+        <input type="text" name="lname" id="lname" value="Pavardenis">
+    </div>
+
+    <div>
+        <label for="phone">Telefonas (pvz.: 37012345687)</label>
+        <input type="tel" name="phone" id="phone" pattern="[0-9]{11}" value="370">
+    </div>
+
+    <div>
+        <label for="service">Pasirinkite paslaugą</label>
+        <select name="service" id="service">
+            <option value="carRent">automobilio nuoma</option>
+            <option value="bikeRent">dviračio nuoma</option>
+            <option value="scooterRent">paspirtuko nuoma</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="dateFrom">Nuo kada ketinama nuomoti</label>
+        <input type="date" name="dateFrom" id="dateFrom">
+    </div>
+
+    <div>
+        <label for="dateTo">Iki kada ketinama nuomoti</label>
+        <input type="date" name="dateTo" id="dateTo">
+    </div>
+
+    <div>
+        <label for="city">Miestas</label>
+        <select name="city" id="city">
+            <option value="vilnius">Vilnius</option>
+            <option value="kaunas">Kaunas</option>
+            <option value="klaipeda">Klaipėda</option>
+        </select>
+    </div>
+
+    <button type="submit">Pateikti</button>
+
+</form>
+
+
+</body>
+</html>
