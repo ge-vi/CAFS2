@@ -7,9 +7,11 @@
         form label {
             display: block;
         }
+
         form div {
             margin-bottom: 1rem;
         }
+
         form input,
         form select {
             width: 200px;
@@ -56,12 +58,18 @@ Suprogramuokite HTML formą, kuri turės galimybę vartotojui nurodyti:
     </div>
 
     <div>
-        <label for="service">Pasirinkite paslaugą</label>
-        <select name="service" id="service">
-            <option value="carRent">automobilio nuoma</option>
-            <option value="bikeRent">dviračio nuoma</option>
-            <option value="scooterRent">paspirtuko nuoma</option>
-        </select>
+        <fieldset>
+            <legend>Pasirinkite paslaugą</legend>
+
+            <label for="car">automobilio nuoma</label>
+            <input type="checkbox" name="service[]" value="automobilio_nuoma" id="car">
+
+            <label for="bike">dviračio nuoma</label>
+            <input type="checkbox" name="service[]" value="dviracio_nuoma" id="bike">
+
+            <label for="scooter">paspirtuko nuoma</label>
+            <input type="checkbox" name="service[]" value="paspirtuko_nuoma" id="scooter">
+        </fieldset>
     </div>
 
     <div>
