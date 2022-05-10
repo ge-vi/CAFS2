@@ -40,6 +40,8 @@ main {
     width: 200px;
 
     border: 5px solid blue;
+
+    overflow: hidden;
 }
 
 #fifth {
