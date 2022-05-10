@@ -3,6 +3,16 @@ a {
 }
 
 a:hover {
-    color: red;
-    text-decoration: underline;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#menu a {
+    display: block;
+
+    width: 200px;
+    border: 1px solid;
+
+    padding: 5px;
+    margin: 5px;
 }
