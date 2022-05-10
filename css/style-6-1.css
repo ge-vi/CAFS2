@@ -10,22 +10,24 @@ main {
     min-height: 100vh;
 }
 
-#first {
-    background-color: antiquewhite;
+#first,
+#second {
     width: 300px;
     height: 300px;
 
-    padding: 30px;
     border: 4px dashed darkolivegreen;
+}
+
+#first {
+    background-color: antiquewhite;
+
+    padding: 30px;
 }
 
 #second {
     background-color: aquamarine;
-    width: 300px;
-    height: 300px;
 
     padding: 50px;
-    border: 4px dashed darkolivegreen;
 }
 
 #third {
