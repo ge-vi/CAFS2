@@ -4,24 +4,24 @@ a {
 
 nav ul {
     display: flex;
-
     padding: 5px;
     margin: 5px;
-
     list-style-type: none;
+}
+
+nav li {
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 nav a {
     display: block;
-
     border: 1px solid;
-
     padding: 5px;
-    margin: 5px;
-
     color: blue;
 }
 
 nav a:hover {
-    color: red;
+    color: white;
+    background-color: silver;
 }
