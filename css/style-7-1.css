@@ -1,12 +1,8 @@
-main {
-    width: 80%;
-    margin: 1em auto;
-}
-
-#menu a {
+a {
     text-decoration: none;
 }
 
-#menu a:hover {
+a:hover {
     color: red;
+    text-decoration: underline;
 }
