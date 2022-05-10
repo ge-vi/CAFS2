@@ -1,16 +1,18 @@
 a {
     text-decoration: none;
-}
-
-a:hover {
     font-weight: bold;
 }
 
-#menu ul {
+a:hover {
+    background-color: white;
+    color: darkgrey;
+}
+
+nav ul {
     list-style-type: none;
 }
 
-#menu a {
+nav a {
     display: block;
 
     width: 200px;
@@ -18,4 +20,7 @@ a:hover {
 
     padding: 5px;
     margin: 5px;
+
+    background-color: darkgrey;
+    color: white;
 }
