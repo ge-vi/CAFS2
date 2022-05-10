@@ -1,26 +1,27 @@
 a {
     text-decoration: none;
-    font-weight: bold;
-}
-
-a:hover {
-    background-color: white;
-    color: darkgrey;
 }
 
 nav ul {
+    display: flex;
+
+    padding: 5px;
+    margin: 5px;
+
     list-style-type: none;
 }
 
 nav a {
     display: block;
 
-    width: 200px;
     border: 1px solid;
 
     padding: 5px;
     margin: 5px;
 
-    background-color: darkgrey;
-    color: white;
+    color: blue;
+}
+
+nav a:hover {
+    color: red;
 }
