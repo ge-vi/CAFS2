@@ -7,6 +7,10 @@ a:hover {
     font-weight: bold;
 }
 
+#menu ul {
+    list-style-type: none;
+}
+
 #menu a {
     display: block;
 
