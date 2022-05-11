@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Title</title>
+
+    <link rel="stylesheet" href="css/normalize-custom.css">
+    <link rel="stylesheet" href="css/style-8-2.css">
+</head>
+<body>
+
+<!--
+Turi bloką (parent div), kurio viduje yra kitas blokas (child div).
+Antras blokas turi tokius parametrus:
+
+Desktop ekrane (nuo 1200px):
+    Plotis: 33.33% tėvinio elemento;
+    Aukštis 450px;
+    Spalva: žalia.
+
+Tablet ekrane (nuo 786px):
+    Plotis: 50% tėvinio elemento;
+    Aukštis 350px;
+    Spalva: geltona.
+
+Mobile ekrane (iki 785px) – default stilius (Mobile first development principas):
+    Plotis: 100% tėvinio elemento;
+    Aukštis 250px;
+    Spalva: mėlyna.
+-->
+
+<div class="parent">
+    <div class="child">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dignissimos, doloremque ipsum itaque
+            necessitatibus numquam pariatur provident voluptatibus. Labore, neque!</p>
+    </div>
+</div>
+
+</body>
+</html>
