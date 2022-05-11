@@ -1,18 +1,26 @@
-/* Small only */
+/* Small only
+"max-width = works to"
+from 0 to 479px
+*/
 @media screen and (max-width: 479px) {
     body {
         background-color: red;
     }
 }
 
-/* Medium only */
+/* Medium only
+"min-width = starts"
+from 480 to 799px
+*/
 @media screen and (min-width: 480px) and (max-width: 799px) {
     body {
         background-color: green;
     }
 }
 
-/* Large and up */
+/* Large and up
+"min-width = starts"
+*/
 @media screen and (min-width: 800px) {
     body {
         background-color: blue;
