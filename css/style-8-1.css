@@ -1,0 +1,20 @@
+/* Small only */
+@media screen and (max-width: 479px) {
+    body {
+        background-color: red;
+    }
+}
+
+/* Medium only */
+@media screen and (min-width: 480px) and (max-width: 799px) {
+    body {
+        background-color: green;
+    }
+}
+
+/* Large and up */
+@media screen and (min-width: 800px) {
+    body {
+        background-color: blue;
+    }
+}

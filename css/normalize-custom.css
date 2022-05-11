@@ -7,3 +7,8 @@
 body {
     font-family: sans-serif;
 }
+
+/* from responsive design lecture */
+img {
+    max-width: 100%;
+}
