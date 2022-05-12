@@ -1,0 +1,87 @@
+.container {
+    width: 100%;
+    margin: 0 auto;
+
+    /* helpers */
+    padding: 10px;
+}
+
+.head > div {
+    background-color: orange;
+}
+
+.hero > div {
+    background-color: greenyellow;
+}
+
+.content > div {
+    background-color: deepskyblue;
+}
+
+.footer > div {
+    background-color: silver;
+}
+
+/* helpers */
+.ten-fifty {
+    margin: 10px;
+    height: 50px;
+}
+
+/* tablet
+*/
+@media screen and (min-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    .hero > div {
+        height: 100px;
+    }
+
+    .footer {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .footer > div {
+        flex: 1 0 40%;
+        flex-wrap: wrap;
+    }
+}
+
+/* desktop
+*/
+@media screen and (min-width: 1024px) {
+    .container {
+        width: 80%;
+    }
+
+    .head {
+        display: flex;
+    }
+
+    .head > div {
+        flex-grow: 1;
+    }
+
+    .hero > div {
+        height: 150px;
+    }
+
+    .content {
+        display: flex;
+    }
+
+    .content > div {
+        flex-grow: 1;
+    }
+
+    .footer {
+        display: flex;
+    }
+
+    .footer > div {
+        flex-grow: 1;
+    }
+}
