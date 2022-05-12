@@ -5,19 +5,23 @@
 }
 
 /* helpers */
-.head > div {
+header > div {
     background-color: orange;
 }
+
 .hero > div {
     background-color: greenyellow;
 }
-.content > div {
+
+.content > section {
     background-color: deepskyblue;
 }
-.footer > div {
+
+footer > div {
     background-color: silver;
 }
-.ten-fifty {
+
+.box {
     margin: .5rem;
     height: 5rem;
 }
@@ -33,12 +37,12 @@
         height: 15rem;
     }
 
-    .footer {
+    footer {
         display: flex;
         flex-wrap: wrap;
     }
 
-    .footer > div {
+    footer > div {
         flex: 1 0 40%;
         flex-wrap: wrap;
     }
@@ -51,31 +55,19 @@
         width: 80%;
     }
 
-    .head {
+    header,
+    .content,
+    footer {
         display: flex;
     }
 
-    .head > div {
+    header > div,
+    .content > section,
+    footer > div {
         flex-grow: 1;
     }
 
     .hero > div {
         height: 15rem;
-    }
-
-    .content {
-        display: flex;
-    }
-
-    .content > div {
-        flex-grow: 1;
-    }
-
-    .footer {
-        display: flex;
-    }
-
-    .footer > div {
-        flex-grow: 1;
     }
 }
