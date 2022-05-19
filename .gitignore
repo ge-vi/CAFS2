@@ -1,5 +1,10 @@
 #IDE
 .idea/
-vendor/
-composer.json
-composer.lock
+
+#
+node_modules
+vendor
+
+mix-manifest.json
+
+public/
