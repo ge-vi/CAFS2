@@ -1,0 +1,48 @@
+@import "~bootstrap/scss/bootstrap";
+
+$enable-negative-margins: true;
+
+$text-color-primary: #080f1a;
+$text-color-secondary: #73829e;
+
+$button-color: #303ca5;
+
+$price-bg-color: #f4f6fc;
+
+:root {
+  --bs-font-sans-serif: 'Nunito Sans', sans-serif;
+  --bs-body-font-family: var(--bs-font-sans-serif);
+}
+
+.card {
+  --bs-card-cap-padding-y: 2rem;
+
+  .card-header {
+    background-color: $white;
+  }
+
+  .alert-secondary {
+    background-color: $price-bg-color;
+    border: none;
+    border-radius: 30px;
+    width: 50%;
+
+    h3 {
+      font-weight: bold;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.btn-outline-dark {
+  color: $button-color;
+  border-color: $button-color;
+}
+
+.list-group-flush.cu-no-borders > .list-group-item {
+  border-width: 0;
+}
+
+.text-muted {
+  color: $text-color-secondary;
+}
