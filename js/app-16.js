@@ -1,4 +1,10 @@
-const input1 = prompt("enter first number");
-const input2 = prompt("enter second number");
+"use strict"
 
-alert(`Result is: ${parseInt(input1) + parseInt(input2)}`);
+const input1 = parseInt(prompt("enter first number"));
+const input2 = parseInt(prompt("enter second number"));
+
+if (isNaN(input1) || isNaN(input2)) {
+  alert("next time input two numbers");
+} else {
+  alert(`Result is: ${input1 + input2}`);
+}
