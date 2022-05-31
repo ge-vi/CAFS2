@@ -11,6 +11,7 @@ Parašykitė funkcijas (tiek paprasta funkcija, tiek arrow) kuri suskaičioja sk
 possible another approach
 
 let nums = 123;
+
 let lastNum = nums % 10;
 console.log(lastNum); // 3
 
