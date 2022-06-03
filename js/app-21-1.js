@@ -3,6 +3,13 @@
 "use strict";
 
 /*
+JavaScript Array Explorer
+Find the array method you need without digging through the docs
+
+https://arrayexplorer.netlify.app/
+*/
+
+/*
 Pabandykime atlikti 5 masyvo (Array) operacijas.
 
 1 Sukurkite masyvą (Array) styles su elementais „Jazz“ ir „Blues“.
