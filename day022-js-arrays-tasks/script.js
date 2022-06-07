@@ -49,15 +49,9 @@ console.assert(arrIndexOfLast(numbers, -4) === 13, "arrIndexOfFirst should retur
 // Pvz.: Turime skaičius 32243;
 // Iškvietus funkciją rezultata bus: 34223
 
-const reverseNumbers = numToReverse =>
-  String(numToReverse)
-    .split("")
-    .reverse()
-    .reduce((acc, val) => {
-      return acc.concat(val);
-    }, "");
-// test
-console.assert(reverseNumbers(32243) == 34223, "reverseNumbers should reverse 32243 to 34223");
+const reverseNumbers = numToReverse => Number(`${numToReverse}`.split("").reverse().join(""));
+// test v2
+console.assert(reverseNumbers(32243) === 34223, "reverseNumbers should reverse 32243 to 34223");
 
 
 // 7. Parašykite  funkciją, kuri kaip argumentą priims skaičių masyvą ir suras atitinkamai mažiausią ir didžiausią skaičių bei juos grąžins.
