@@ -7,18 +7,21 @@ let numbers = [5, 1, 7, 2, -9, 8, 2, 7, 9, 4, -5, 2, -6, -4, 6];
 // 1. Parašykite funkciją arrDoubled, kuri sukuria ir grąžina naują masyvą, kurio elementai padauginti iš 2;
 
 const arrDoubled = arr => arr.map(value => value * 2);
+// test
 console.log("arrDoubled", arrDoubled(numbers));
 
 
 // 2. Parašykite funkciją arrMultiplied(arr, n), kuri sukuria ir grąžina naują masyvą, kurio elementai padauginti iš argumentu nurodyto skaičiaus
 
 const arrMultiplied = (arr, mult) => arr.map(value => value * mult);
+// test
 console.log("arrMultiplied by 3", arrMultiplied(numbers, 3));
 
 
 // 3. Parašykite funkciją arrCountTwos, kuri suskaičiuoja dvejetus masyve
 
 const arrCountTwos = numbers => numbers.reduce((acc, val) => (val === 2 ? ++acc : acc), 0);
+// test
 console.assert(arrCountTwos(numbers) === 3, "arrCountTwos should find 3 items");
 
 
@@ -26,6 +29,7 @@ console.assert(arrCountTwos(numbers) === 3, "arrCountTwos should find 3 items");
 // Jei skaičius nerastas funkcija turi grąžinti -1.
 
 const arrIndexOfFirst = (arr, need) => arr.indexOf(need);
+// test
 console.assert(arrIndexOfFirst(numbers, 11) === -1, "arrIndexOfFirst should return -1");
 console.assert(arrIndexOfFirst(numbers, 5) === 0, "arrIndexOfFirst should return 0");
 console.assert(arrIndexOfFirst(numbers, 7) === 2, "arrIndexOfFirst should return 2");
@@ -35,6 +39,7 @@ console.assert(arrIndexOfFirst(numbers, 7) === 2, "arrIndexOfFirst should return
 // Jei skaičius nerastas funkcija turi grąžinti -1.
 
 const arrIndexOfLast = (arr, last) => arr.lastIndexOf(last);
+// test
 console.assert(arrIndexOfLast(numbers, 11) === -1, "arrIndexOfLast should return -1");
 console.assert(arrIndexOfLast(numbers, -4) === 13, "arrIndexOfFirst should return 13");
 
@@ -51,6 +56,7 @@ const reverseNumbers = numToReverse =>
     .reduce((acc, val) => {
       return acc.concat(val);
     }, "");
+// test
 console.assert(reverseNumbers(32243) == 34223, "reverseNumbers should reverse 32243 to 34223");
 
 
@@ -59,6 +65,7 @@ console.assert(reverseNumbers(32243) == 34223, "reverseNumbers should reverse 32
 // Iškvietus funkciją rezultata bus: "Mažiausas: 1, Didžiausas: 9"
 
 const findMinMax = arr => `Mažiausas: ${Math.min(...arr)}, Didžiausas: ${Math.max(...arr)}`;
+// test
 console.assert(findMinMax([8, 5, 4, 2, 7, 1, 9]) === "Mažiausas: 1, Didžiausas: 9", "findMinMax not working as expected");
 
 
@@ -74,6 +81,7 @@ const checkForLetters = (term, letter) => {
   }, 0);
   return `Raidė ${letter} sakinyje rasta ${count} kartus`;
 };
+// test
 // console.log(checkForLetters("Lorem ipsum dolor sit amet, consectetur adipisicing elit", "e"));
 console.assert(checkForLetters("Lorem ipsum dolor sit amet, consectetur adipisicing elit", "e") === "Raidė e sakinyje rasta 5 kartus", "checkForLetters failed");
 
@@ -90,6 +98,7 @@ const findAndSortNumbers = arr => {
     }
   }).sort((n1, n2) => n1 - n2);
 };
+// test
 console.log(findAndSortNumbers(arr2));
 
 
@@ -108,6 +117,7 @@ const checkIfAllSmaller = (arr, max) => {
   }
   return found;
 };
+// test
 console.assert(checkIfAllSmaller([2, 7, 6, 9, 5], 1) === true, "checkIfAllSmaller failed with 1");
 console.assert(checkIfAllSmaller([2, 7, 6, 9, 5], 5) === false, "checkIfAllSmaller failed with 5");
 
@@ -139,6 +149,7 @@ const filteredByLetter = (citiesArr, letter) => {
     }
   }, []);
 };
+// test
 console.log(filteredByLetter(citiesOfLithuania, "u"));
 
 // 12. Parašykite penkias funkcijas:
@@ -160,34 +171,10 @@ console.log(filteredByLetter(citiesOfLithuania, "u"));
 // Pastaba: šios funkcijos: addition(), subtraction(), multiplication(), division() turi būti kviečiamas
 // calculateValue() viduje, o aprašomos išorėje.
 
-const addition = (num1, num2) => {
-  if (isNaN(num1) || isNaN(num2)) {
-    return false;
-  }
-  return num1 + num2;
-}
-
-const subtraction = (num1, num2) => {
-  if (isNaN(num1) || isNaN(num2)) {
-    return false;
-  }
-  return num1 - num2;
-}
-
-const multiplication = (num1, num2) => {
-  if (isNaN(num1) || isNaN(num2)) {
-    return false;
-  }
-  return num1 * num2;
-}
-
-const division = (num1, num2) => {
-  if (isNaN(num1) || isNaN(num2) || num2 === 0) {
-    return false;
-  }
-  return num1 / num2;
-}
-
+const addition = (num1, num2) => (isNaN(num1) || isNaN(num2)) ? false : num1 + num2;
+const subtraction = (num1, num2) => (isNaN(num1) || isNaN(num2)) ? false : num1 - num2;
+const multiplication = (num1, num2) => (isNaN(num1) || isNaN(num2)) ? false : num1 * num2;
+const division = (num1, num2) => (isNaN(num1) || isNaN(num2) || num2 === 0) ? false : num1 / num2;
 
 const calculateValue = (num1, num2, action) => {
   switch (action) {
@@ -207,7 +194,7 @@ const calculateValue = (num1, num2, action) => {
       return false;
   }
 }
-
+// test
 console.log("sum", calculateValue(10, 5, "+"));
 console.log("sum", calculateValue(10, "a", "+"));
 
