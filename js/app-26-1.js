@@ -17,6 +17,8 @@ const displayDimensions = (width, height) => {
   }
 }
 
+// as alternative can be used `DOMContentLoaded` event
+// https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event
 window.addEventListener("load", evt => {
   displayDimensions(htmlH1Widht, htmlH1Height);
 });
