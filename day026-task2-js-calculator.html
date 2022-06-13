@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--suppress HtmlFormInputWithoutLabel -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Title</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style-26-2.css">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h1 class="text-center">Hello Calculator!</h1>
+</div>
+
+<div class="container calculator mt-5">
+
+    <div class="row calc-input">
+        <div class="col-md-12"></div>
+        <input type="text" class="my-3" id="calc-display" value="0">
+    </div>
+
+    <div class="row calc-numbers">
+        <div class="col-md-4">
+            <button type="button" value="7">7</button>
+        </div>
+        <div class="col-md-4">
+            <button type="button" value="8">8</button>
+        </div>
+        <div class="col-md-4">
+            <button type="button" value="9">9</button>
+        </div>
+
+        <div class="col-md-4">
+            <button type="button" value="4">4</button>
+        </div>
+        <div class="col-md-4">
+            <button type="button" value="5">5</button>
+        </div>
+        <div class="col-md-4">
+            <button type="button" value="6">6</button>
+        </div>
+
+        <div class="col-md-4">
+            <button type="button" value="1">1</button>
+        </div>
+        <div class="col-md-4">
+            <button type="button" value="2">2</button>
+        </div>
+        <div class="col-md-4">
+            <button type="button" value="3">3</button>
+        </div>
+        <div class="col-md-12">
+            <button type="button" value="0">0</button>
+        </div>
+    </div>
+
+    <div class="row calc-actions">
+        <div class="col-md-12">
+            <button type="button" id="calc-clear" value="clear">Clear</button>
+        </div>
+        <div class="col-md-3">
+            <button type="button" id="calc-add" value="">+</button>
+        </div>
+        <div class="col-md-3">
+            <button type="button" id="calc-sub" value="">-</button>
+        </div>
+        <div class="col-md-3">
+            <button type="button" id="calc-mul" value="">×</button>
+        </div>
+        <div class="col-md-3">
+            <button type="button" id="calc-div" value="">÷</button>
+        </div>
+    </div>
+
+    <div class="row calc-compute">
+        <div class="col-md-12">
+            <button type="button" id="calc-result" value="calculate">=</button>
+        </div>
+    </div>
+</div>
+
+<script src="js/app-26-2.js"></script>
+</body>
+</html>
