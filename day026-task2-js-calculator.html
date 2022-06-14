@@ -22,10 +22,10 @@
 
     <div class="row calc-input">
         <div class="col-md-12"></div>
-        <input type="text" class="my-3" id="calc-display" value="0">
+        <input type="text" class="my-3" id="js-calc-display" value="">
     </div>
 
-    <div class="row calc-numbers">
+    <div class="row js-calc-numbers">
         <div class="col-md-4">
             <button type="button" value="7">7</button>
         </div>
@@ -60,31 +60,37 @@
         </div>
     </div>
 
-    <div class="row calc-actions">
-        <div class="col-md-12">
-            <button type="button" id="calc-clear" value="clear">Clear</button>
+    <div class="row js-calc-actions">
+        <div class="col-md-3">
+            <button type="button" id="calc-add" value="+">+</button>
         </div>
         <div class="col-md-3">
-            <button type="button" id="calc-add" value="">+</button>
+            <button type="button" id="calc-sub" value="-">-</button>
         </div>
         <div class="col-md-3">
-            <button type="button" id="calc-sub" value="">-</button>
+            <button type="button" id="calc-mul" value="*">×</button>
         </div>
         <div class="col-md-3">
-            <button type="button" id="calc-mul" value="">×</button>
-        </div>
-        <div class="col-md-3">
-            <button type="button" id="calc-div" value="">÷</button>
+            <button type="button" id="calc-div" value="/">÷</button>
         </div>
     </div>
 
-    <div class="row calc-compute">
+    <div class="row">
         <div class="col-md-12">
-            <button type="button" id="calc-result" value="calculate">=</button>
+            <button type="button" id="js-calc-result" value="calculate">=</button>
         </div>
     </div>
+
+    <div class="row mt-3">
+        <div class="col-md-12">
+            <button type="button" class="border border-danger" id="js-calc-clear" value="clear">Clear</button>
+        </div>
+    </div>
+
 </div>
 
 <script src="js/app-26-2.js"></script>
+<script src="day022-js-arrays-tasks/script.js"></script>
+
 </body>
 </html>

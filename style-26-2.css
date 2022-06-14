@@ -11,9 +11,14 @@
     margin: 5px;
 
     font-size: 2em;
+    border-radius: 5px;
 }
 
 .calculator button:hover {
     background-color: black;
     color: white;
+}
+
+#js-calc-clear:hover {
+    background-color: red;
 }
