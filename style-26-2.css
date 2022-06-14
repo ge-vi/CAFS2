@@ -1,6 +1,10 @@
+.mw-768 {
+    max-width: 768px;
+}
+
 .calc-input input {
     font-family: monospace;
-    font-size: 3em;
+    font-size: 3rem;
     text-align: right;
 }
 
@@ -10,7 +14,7 @@
 
     margin: 5px;
 
-    font-size: 2em;
+    font-size: 2rem;
     border-radius: 5px;
 }
 
