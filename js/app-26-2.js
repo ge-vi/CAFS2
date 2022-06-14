@@ -15,6 +15,9 @@ let calcOperation;
 let calcOpInProgress;
 let calculatedResult;
 
+/* helper */
+const debug = false;
+
 
 const initCalculator = () => {
 
@@ -29,17 +32,19 @@ const initCalculator = () => {
 
   /* bind to calc. actions */
   for (const calcAction of calcActionsBtn) {
-    calcAction.addEventListener("click", handleOperationInput);
+    calcAction.addEventListener("click", handleOperatorInput);
   }
 
   /* calculate result */
   calcResultBtn.addEventListener("click", handleCalculation);
 }
 
+
 const clearMemory = () => {
   firstOperand = "";
   secondOperand = "";
   calcOperation = "";
+  calcOpInProgress = false;
   calculatedResult = "";
 };
 
@@ -59,16 +64,20 @@ const clearCalculator = () => {
 }
 
 const handleNumberInput = (evt) => {
-  if (!calcOpInProgress) {
-    firstOperand += Number(evt.target.value);
+  if (!secondOperand && !calcOpInProgress) {
+    firstOperand += evt.target.value;
     updateDisplay();
   } else {
-    secondOperand += Number(evt.target.value);
+    secondOperand += evt.target.value;
     updateDisplay();
   }
 }
 
-const handleOperationInput = (evt) => {
+const handleOperatorInput = (evt) => {
+  if (calculatedResult) {
+    firstOperand = calculatedResult;
+    secondOperand = "";
+  }
   if (firstOperand) {
     calcOperation = String(evt.target.value);
     updateDisplay();
@@ -80,12 +89,20 @@ const handleCalculation = () => {
   if (firstOperand && secondOperand && calcOperation) {
     calculatedResult = calculateValue(+firstOperand, +secondOperand, calcOperation);
     calcDisplay.value = Number(calculatedResult).toFixed(2);
-
-    clearMemory();
-    calcOpInProgress = false;
   }
 }
 
 window.addEventListener("load", evt => {
   initCalculator();
 });
+
+if (debug) {
+  window.addEventListener("click", () => {
+    console.log("firstOperand", firstOperand);
+    console.log("secondOperand", secondOperand);
+    console.log("calcOperation", calcOperation);
+    console.log("calcOpInProgress", calcOpInProgress);
+    console.log("calculatedResult", calculatedResult);
+    console.log("---");
+  });
+}
