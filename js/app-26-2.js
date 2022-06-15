@@ -16,7 +16,7 @@ let calcOpInProgress;
 let calculatedResult;
 
 /* helper */
-const debug = false;
+const DEBUG = false;
 
 
 const initCalculator = () => {
@@ -96,7 +96,7 @@ window.addEventListener("load", evt => {
   initCalculator();
 });
 
-if (debug) {
+if (DEBUG) {
   window.addEventListener("click", () => {
     console.log("firstOperand", firstOperand);
     console.log("secondOperand", secondOperand);
