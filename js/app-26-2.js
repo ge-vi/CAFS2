@@ -92,7 +92,7 @@ const handleCalculation = () => {
   }
 }
 
-window.addEventListener("load", evt => {
+window.addEventListener("DOMContentLoaded", evt => {
   initCalculator();
 });
 
