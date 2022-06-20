@@ -13,7 +13,16 @@ img {
     max-width: 100%;
 }
 
+/* utility classes */
 .center-block {
     display: block;
     margin: 0 auto;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.display-none {
+    display: none;
 }
