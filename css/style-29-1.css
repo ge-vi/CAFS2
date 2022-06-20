@@ -1,0 +1,52 @@
+.wrapper {
+    width: 100%;
+}
+
+/* 320+ */
+@media screen and (min-width: 320px) {
+    .wrapper {
+        width: 80%;
+    }
+
+    #top-nav button {
+        display: none;
+    }
+
+    /* force display hidden menu (by button) */
+    #top-nav ul.display-none {
+        display: initial;
+    }
+}
+
+nav li {
+    list-style-type: none;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+.slide .img-wrapp {
+    height: 400px;
+}
+
+#clock {
+    font-size: 10rem;
+}
+
+.status-message {
+    color: red;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid rosybrown;
+}
+
+/* utility classes */
+.mx-5 {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+.display-none {
+    display: none;
+}

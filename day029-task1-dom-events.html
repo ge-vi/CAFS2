@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>DOM events</title>
+
+    <link rel="stylesheet" href="css/normalize-custom.css">
+    <link rel="stylesheet" href="css/style-29-1.css">
+
+</head>
+<body>
+
+<!--
+Sukurkite HTML dokumentą, kuris <body> dalyje turės tris žymas, t.y.
+<header>, <main>, <footer>.
+
+<header>
+dalyje bus navigacijos meniu su 5 nuorodomis, kuris bus “Responsive” (mobilioje versjoje turi būti “toggler” mygtukas,
+kurį paspaudus atsiranda meniu).
+
+<main>
+dalyje bus trys <section>:
+Pirmas <section>
+turės pilno pločio ir aukčio “slider” foną, kuriame bus 3 paveikslėliai, kurie keisis kas 2 sekundės;
+Antras <section>
+turės pilno pločio ir ne mažesnę nei 300px aukščio laikrodį (laikas rodomas kaip tekstas), kuriame bus matomos dabartinės valandos, minutės ir sekundės (atsinaujins realiu laiku);
+Trečias <section>
+turės kontaktų formą, kurią užpildžius, po ja pasirodys žinutė, kurioje nurodoma, kad forma užpildyta sėkmingai
+-->
+
+<div class="wrapper center-block">
+    <header class="mx-5">
+        <nav id="top-nav">
+            <button>☰ toggle menu</button>
+            <ul>
+                <li><a href="#">link 1</a></li>
+                <li><a href="#">link 2</a></li>
+                <li><a href="#">link 3</a></li>
+                <li><a href="#">link 4</a></li>
+                <li><a href="#">link 5</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="center-block">
+        <section id="slider" class="mx-5">
+
+            <h2>Quick (and dirty) js image changer ;)</h2>
+
+            <div class="img-wrapp">
+                <img src="https://picsum.photos/400/300.webp?random=1" alt="placeholder">
+            </div>
+        </section>
+
+        <section class="mx-5">
+            <h2>Real time clock</h2>
+            <p id="clock" class="center-block"><span id="hours">00</span>:<span id="minutes">00</span>:<span
+                    id="seconds">00</span></p>
+        </section>
+
+        <section id="form-with-message" class="mx-5">
+            <h2>Form with additional validation</h2>
+            <div class="status-message display-none"></div>
+            <form action="#" method="post" id="reg-form">
+                <div>
+                    <label for="name">name</label>
+                    <input type="text" name="name" id="name">
+                </div>
+
+                <div>
+                    <label for="email">email</label>
+                    <input type="email" name="email" id="email">
+                </div>
+
+                <button type="submit">Register</button>
+            </form>
+        </section>
+    </main>
+
+    <footer></footer>
+</div>
+
+<script src="js/app-29-1.js"></script>
+</body>
+</html>
