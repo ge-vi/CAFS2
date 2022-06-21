@@ -52,6 +52,7 @@ const htmlFormMsg = document.querySelector("#form-with-message .status-message")
 document.forms["reg-form"].addEventListener("submit", evt => {
 
   const errors = [];
+  htmlFormMsg.classList.add("display-none");
 
   if (!evt.target.elements["name"].value) {
     errors.push("no name: please enter name");
@@ -62,7 +63,7 @@ document.forms["reg-form"].addEventListener("submit", evt => {
 
   if (errors.length) {
     htmlFormMsg.textContent = `some errors found. ${errors.toString()}`;
-    htmlFormMsg.classList.toggle("display-none");
+    htmlFormMsg.classList.remove("display-none");
     evt.preventDefault();
   }
 });
