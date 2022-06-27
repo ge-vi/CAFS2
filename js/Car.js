@@ -13,6 +13,10 @@ class Car {
   }
 
   getAge() {
-    return (new Date().getFullYear() - this.year <= 10) ? `10 metų arba naujesnis` : `11 metų arba senesnis`;
+    return new Date().getFullYear() - this.year;
+  }
+
+  getAgeStr() {
+    return (this.getAge() <= 10) ? `10 metų arba naujesnis` : `11 metų arba senesnis`;
   }
 }

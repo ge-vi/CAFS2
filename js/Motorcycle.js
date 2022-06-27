@@ -6,6 +6,10 @@ class Motorcycle extends Car {
   }
 
   getWheelsNumber() {
+    return this.wheels;
+  }
+
+  getWheelsNumberStr() {
     if (this.wheels === 3) {
       return `motociklas turi 3 ratus`;
     } else if (this.wheels === 2) {
