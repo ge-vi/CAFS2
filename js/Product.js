@@ -1,10 +1,10 @@
 class Product {
 
-  constructor(name, price, salePrice, ...category) {
+  constructor(name, price, salePrice, categories) {
     this.name = name;
     this.price = Number(price);
     this.salePrice = Number(salePrice);
-    this.categories = category;
+    this.categories = categories;
   }
 
   productDescription() {
@@ -50,4 +50,12 @@ class Product {
     return this.isDiscountAvailable() ? this.price : this.salePrice;
   }
 
+  /**
+   *
+   * @param catToFind
+   * @returns {boolean}
+   */
+  containsCategory(catToFind) {
+    return this.categories.includes(catToFind);
+  }
 }
