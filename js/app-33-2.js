@@ -18,3 +18,6 @@ currentProducts.push(product4);
 
 const product5 = new Product("Sweater", 120, 110, "Sweaters");
 currentProducts.push(product5);
+
+const product6 = new Product("Sweater", 120, 110, "Sweaterss"); // cat with error
+currentProducts.push(product6);

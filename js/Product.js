@@ -1,10 +1,18 @@
 class Product {
 
   constructor(name, price, salePrice, categories) {
-    this.name = name;
-    this.price = Number(price);
-    this.salePrice = Number(salePrice);
-    this.categories = categories;
+    if (name) {
+      this.setName(name);
+    }
+    if (price) {
+      this.setPrice(price);
+    }
+    if (salePrice) {
+      this.setSalePrice(salePrice);
+    }
+    if (categories) {
+      this.setCategories(categories);
+    }
   }
 
   productDescription() {
@@ -56,6 +64,44 @@ class Product {
    * @returns {boolean}
    */
   containsCategory(catToFind) {
-    return this.categories.includes(catToFind);
+    if (this.categories) {
+      return this.categories.includes(catToFind);
+    } else {
+      return false;
+    }
+  }
+
+  /**
+   *
+   * @param category
+   */
+  isAlowedCategory(category) {
+    return category.every(item => {
+      return AVAILABLE_CATEGORIES.includes(item);
+    });
+  }
+
+  /* getters and setters */
+  setName(name) {
+    this.name = name;
+    return this;
+  }
+
+  setPrice(price) {
+    this.price = Number(price);
+    return this;
+  }
+
+  setSalePrice(salePrice) {
+    this.salePrice = Number(salePrice);
+    return this;
+  }
+
+  setCategories(categories) {
+    if (Array.isArray(categories) && this.isAlowedCategory(categories)) {
+      this.categories = categories;
+    } else if (this.isAlowedCategory(Array.of(categories))) {
+      this.categories = Array.of(categories);
+    }
   }
 }
