@@ -2,8 +2,8 @@ class ProductFilters {
 
   static priceFilterOptions() {
     return {
-      nuo: "from",
-      iki: "to"
+      from: "from",
+      to: "to"
     }
   }
 
@@ -16,11 +16,11 @@ class ProductFilters {
    * @returns {*}
    */
   static filterByPrice(prodArr, price, option) {
-    if (option === ProductFilters.priceFilterOptions().nuo) {
+    if (option === ProductFilters.priceFilterOptions().from) {
       return prodArr.filter(prod => {
         return prod.getCartPrice >= price;
       });
-    } else if (option === ProductFilters.priceFilterOptions().iki) {
+    } else if (option === ProductFilters.priceFilterOptions().to) {
       return prodArr.filter(prod => {
         return prod.getCartPrice <= price;
       });
