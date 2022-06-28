@@ -8,3 +8,4 @@ vendor
 mix-manifest.json
 
 public/
+_temp/
