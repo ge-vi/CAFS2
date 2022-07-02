@@ -7,6 +7,7 @@
     <title>CodeAcademy Task Day036</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 <div class="container">
@@ -38,40 +39,56 @@
     <div class="card my-2">
         <div class="card-header">
             <p>Paspaudus mygtuką patikrinamos įvestos reikšmės ir jeigu reikia parodomi klaidų pranešimai</p>
-            <ul class="text-muted">
-                <li>element show/hide</li>
-                <li>class add/remove</li>
-            </ul>
         </div>
         <div class="card-body">
 
-            <form class="needs-validation" novalidate>
+            <form novalidate
+                  id="js-form-1"
+                  class="needs-validation"
+                  method="post">
                 <div class="row my-2">
                     <div class="col-md-2">
-                        <label for="validationCustom01" class="form-label">Email</label>
+                        <label for="validationCustom01"
+                               class="form-label">Email</label>
                     </div>
                     <div class="col-md-4">
-                        <input type="email" class="form-control" id="validationCustom01" value="" required>
+                        <input required
+                               type="email"
+                               class="form-control"
+                               id="validationCustom01"
+                               value="">
                         <div class="valid-feedback">
                             Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please check email.
                         </div>
                     </div>
                 </div>
 
                 <div class="row my-2">
                     <div class="col-md-2">
-                        <label for="validationCustom03" class="form-label">Phone Number</label>
+                        <label for="validationCustom02"
+                               class="form-label">Phone Number</label>
                     </div>
                     <div class="col-md-4">
-                        <input type="text" class="form-control" id="validationCustom03" required>
+                        <input required
+                               class="form-control"
+                               id="validationCustom02"
+                               type="tel"
+                               name="phone"
+                               pattern="[0-9]{11}" placeholder="pvz.: 37011122333">
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
                         <div class="invalid-feedback">
-                            Please provide a valid city.
+                            Please check phone number.
                         </div>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="offset-2 col-4">
+                    <div class="offset-md-2 col-4">
                         <button class="btn btn-outline-dark" type="submit">Save</button>
                     </div>
                 </div>
@@ -108,12 +125,13 @@
 
     <div class="card my-2">
         <div class="card-header">
-            Paspaudus ant mygtuko turi "iškristi" menu su punktais. Paspaudus punktą - įvyks veiksmas.
+            Paspaudus ant mygtuko turi "iškristi" menu su punktais.
+            Paspaudus punktą - įvyks veiksmas.
         </div>
-        <div class="card-body">
+        <div id="js-styled-block" class="card-body">
             <div class="row">
                 <div class="col">
-                    <figure>
+                    <figure id="blockquote-fig">
                         <blockquote class="blockquote">
                             <p>A well-known quote, contained in a blockquote element.</p>
                         </blockquote>
@@ -126,44 +144,55 @@
             <div class="row">
                 <div class="col d-flex flex-row justify-content-start align-items-center">
 
-                    <div class="dropdown mx-1">
-                        <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                    <div id="js-dd-cursors" class="dropdown mx-1">
+                        <button class="btn btn-danger dropdown-toggle"
+                                type="button"
+                                id="dropdownMenuButton1"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false">
                             Cursors
                         </button>
-                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="#">pointer</a></li>
-                            <li><a class="dropdown-item" href="#">text</a></li>
-                            <li><a class="dropdown-item" href="#">copy</a></li>
-                            <li><a class="dropdown-item" href="#">crosshair</a></li>
+                        <ul class="dropdown-menu dropdown-menu-dark"
+                            aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="#" data-cursor="cursor-pointer">pointer</a></li>
+                            <li><a class="dropdown-item" href="#" data-cursor="cursor-text">text</a></li>
+                            <li><a class="dropdown-item" href="#" data-cursor="cursor-copy">copy</a></li>
+                            <li><a class="dropdown-item" href="#" data-cursor="cursor-crosshair">crosshair</a></li>
                         </ul>
                     </div>
 
-                    <div class="dropdown mx-1">
-                        <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton2"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                    <div id="js-dd-colors" class="dropdown mx-1">
+                        <button class="btn btn-danger dropdown-toggle"
+                                type="button"
+                                id="dropdownMenuButton2"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false">
                             Colors
                         </button>
-                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-                            <li><a class="dropdown-item" href="#">red</a></li>
-                            <li><a class="dropdown-item" href="#">green</a></li>
-                            <li><a class="dropdown-item" href="#">blue</a></li>
+                        <ul class="dropdown-menu dropdown-menu-dark"
+                            aria-labelledby="dropdownMenuButton2">
+                            <li><a class="dropdown-item" href="#" data-background="bg-danger">red</a></li>
+                            <li><a class="dropdown-item" href="#" data-background="bg-success">green</a></li>
+                            <li><a class="dropdown-item" href="#" data-background="bg-primary">blue</a></li>
                         </ul>
                     </div>
 
-                    <div class="dropdown mx-1">
-                        <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton3"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                    <div id="js-dd-borders" class="dropdown mx-1">
+                        <button class="btn btn-danger dropdown-toggle"
+                                type="button" id="dropdownMenuButton3"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false">
                             Borders
                         </button>
-                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton3">
-                            <li><a class="dropdown-item" href="#">red</a></li>
-                            <li><a class="dropdown-item" href="#">green</a></li>
-                            <li><a class="dropdown-item" href="#">blue</a></li>
+                        <ul class="dropdown-menu dropdown-menu-dark"
+                            aria-labelledby="dropdownMenuButton3">
+                            <li><a class="dropdown-item" href="#" data-border="border border-danger">red</a></li>
+                            <li><a class="dropdown-item" href="#" data-border="border border-success">green</a></li>
+                            <li><a class="dropdown-item" href="#" data-border="border border-primary">blue</a></li>
                         </ul>
                     </div>
 
-                    <button class="btn btn-success mx-1">Reset All</button>
+                    <button id="js-btn-reset" class="btn btn-success mx-1">Reset All</button>
 
                 </div>
             </div>

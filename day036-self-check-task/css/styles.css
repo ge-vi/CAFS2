@@ -1,0 +1,15 @@
+#blockquote-fig.cursor-pointer {
+    cursor: pointer
+}
+
+#blockquote-fig.cursor-text {
+    cursor: text
+}
+
+#blockquote-fig.cursor-copy {
+    cursor: copy
+}
+
+#blockquote-fig.cursor-crosshair {
+    cursor: crosshair
+}
