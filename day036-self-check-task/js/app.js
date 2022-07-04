@@ -36,18 +36,20 @@ window.addEventListener("DOMContentLoaded", function () {
   });
 
   function toUpperCase(str) {
-    return str.toUpperCase();
+    return str.trim().toUpperCase();
   }
 
   function toLowerCase(str) {
-    return str.toLowerCase();
+    return str.trim().toLowerCase();
   }
 
   function firstUpperCase(str) {
+    str = str.trim();
     return str.charAt(0).toUpperCase() + str.slice(1);
   }
 
   function firstLowerCase(str) {
+    str = str.trim();
     return str.charAt(0).toLowerCase() + str.slice(1);
   }
 });
