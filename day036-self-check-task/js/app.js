@@ -15,6 +15,25 @@ window.addEventListener("DOMContentLoaded", function () {
 second
 manipulate string
 */
+
+function toUpperCase(str) {
+  return str.trim().toUpperCase();
+}
+
+function toLowerCase(str) {
+  return str.trim().toLowerCase();
+}
+
+function firstUpperCase(str) {
+  str = str.trim();
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+function firstLowerCase(str) {
+  str = str.trim();
+  return str.charAt(0).toLowerCase() + str.slice(1);
+}
+
 window.addEventListener("DOMContentLoaded", function () {
   const htmlJsWordCase = document.getElementById("js-word-case");
   htmlJsWordCase?.addEventListener("click", evt => {
@@ -34,24 +53,6 @@ window.addEventListener("DOMContentLoaded", function () {
         break;
     }
   });
-
-  function toUpperCase(str) {
-    return str.trim().toUpperCase();
-  }
-
-  function toLowerCase(str) {
-    return str.trim().toLowerCase();
-  }
-
-  function firstUpperCase(str) {
-    str = str.trim();
-    return str.charAt(0).toUpperCase() + str.slice(1);
-  }
-
-  function firstLowerCase(str) {
-    str = str.trim();
-    return str.charAt(0).toLowerCase() + str.slice(1);
-  }
 });
 
 /*
@@ -61,7 +62,7 @@ validate input
 window.addEventListener("DOMContentLoaded", function () {
   const htmlForm1 = document.forms["js-form-1"];
   htmlForm1.addEventListener("submit", evt => {
-    // https://getbootstrap.com/docs/5.0/forms/validation/#custom-styles
+    // https://getbootstrap.com/docs/5.2/forms/validation/#custom-styles
     if (!htmlForm1.checkValidity()) {
       evt.preventDefault()
       evt.stopPropagation()
@@ -83,9 +84,9 @@ window.addEventListener("DOMContentLoaded", function () {
 
   htmlJsBlock.addEventListener("click", evt => {
     if (evt.target === htmlBtnBlock) {
-      htmlInputBlc.setAttribute("disabled", "");
+      htmlInputBlc.disabled = true;
     } else if (evt.target === htmlBtnUnBlock) {
-      htmlInputBlc.removeAttribute("disabled");
+      htmlInputBlc.disabled = false;
     }
   });
 });
