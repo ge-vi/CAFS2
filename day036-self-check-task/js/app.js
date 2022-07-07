@@ -5,10 +5,10 @@ first
 alert
 */
 window.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("js-hello-btn")?.addEventListener("click", () => {
+  // https://html.spec.whatwg.org/multipage/window-object.html#named-access-on-the-window-object
+  jsHelloBtn?.addEventListener("click", () => {
     alert('Hello World!');
   });
-
 });
 
 /*
