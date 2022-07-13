@@ -21,3 +21,7 @@ class Movie {
     return this.income - this.budget;
   }
 }
+
+// add Movie class to nodejs via Module interface
+// https://nodejs.org/api/modules.html
+module.exports = Movie;
