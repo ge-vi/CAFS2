@@ -11,18 +11,27 @@ function createTable(tableData) {
   const htmlTableElement = document.createElement("table");
   tableData.forEach(post => {
     console.log(post);
-    htmlTableElement.appendChild(createTableRow(post));
+    htmlTableElement.appendChild(createTableRow(post, "title", "body"));
   });
   return htmlTableElement;
 }
 
-function createTableRow(rowData) {
+/**
+ * Creates table row with specified columns by name from `rowData`
+ *
+ * @param rowData {Object}
+ * @param fields
+ * @returns {HTMLTableRowElement}
+ */
+function createTableRow(rowData, ...fields) {
   const htmlTableRowElement = document.createElement("tr");
 
   for (const [key, value] of Object.entries(rowData)) {
-    let htmlTableTd = document.createElement("td");
-    htmlTableTd.textContent = `${value}`;
-    htmlTableRowElement.appendChild(htmlTableTd);
+    if (fields.includes(key)) {
+      let htmlTableTd = document.createElement("td");
+      htmlTableTd.textContent = `${value}`;
+      htmlTableRowElement.appendChild(htmlTableTd);
+    }
   }
 
   return htmlTableRowElement;
@@ -61,6 +70,17 @@ function getUsers(posts) {
 //     });
 //   });
 // }
+
+/*
+*
+  // create object of objects
+  // so `task._id` is key for task object itself
+  const objOfTasks = arrOfTasks.reduce((acc, task) => {
+    //console.log(JSON.stringify(acc));
+    acc[task._id] = task;
+    return acc;
+  }, {});
+* */
 
 const htmlPostsTable = document.getElementById("js-posts-table");
 
