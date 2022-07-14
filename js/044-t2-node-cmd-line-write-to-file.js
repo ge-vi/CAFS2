@@ -17,13 +17,12 @@ const fileContents = process.argv[3];
 if (!fileName && !fileContents) {
   console.log("Missing arguments. please specify file name and file contents.");
   process.exit(1);
+} else {
+  fs.writeFile(`./${fileName}`, fileContents, err => {
+    console.log("begin file write...");
+    if (err) {
+      console.error(err);
+    }
+    console.log("file written successfully");
+  });
 }
-
-console.log("begin file write...");
-
-fs.writeFile(`./${fileName}`, fileContents, err => {
-  if (err) {
-    console.error(err);
-  }
-  console.log("file written successfully");
-});
