@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>JS fetch</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+</head>
+<body>
+
+<div class="container mt-5">
+    <h1 class="text-center">Hello posts from jsonplaceholder!</h1>
+
+    <p>Parašykite funkciją getPosts, kuri gražina Promise,
+        kuriame yra išgaunami post'ai iš https://jsonplaceholder.typicode.com/posts
+        panaudojant vieną iš galimų AJAX būdų: XMLHttpRequest, fetch, jQuery, axios.</p>
+
+    <p>Promise atvaizduokite gautus duomenys HTML lentelėje.</p>
+
+    <p>Panaudojant gautą userId parodykite vartotojo vardą šalia "post" informacijos.</p>
+</div>
+
+<div class="container mt-5">
+
+    <button id="js-posts-button" class="btn btn-success">Get posts</button>
+
+
+    <div id="js-posts-table"></div>
+
+</div>
+
+<script src="js/app-42-1.js"></script>
+
+<!--<script src="js/app-42-1.test.js"></script>-->
+
+</body>
+</html>
