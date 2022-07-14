@@ -10,3 +10,4 @@ let mov1 = new Movie("mov1", 2010, "direct1", 1000, 1500);
 
 console.log(mov1);
 console.log(mov1.name);
+
