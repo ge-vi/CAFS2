@@ -11,16 +11,18 @@
 
 const fs = require('node:fs');
 
-const fileName = String(process.argv[2]);
-const fileContents = String(process.argv[3]);
+const fileName = process.argv[2];
+const fileContents = process.argv[3];
 
 if (!fileName && !fileContents) {
   console.log("Missing arguments. please specify file name and file contents.");
+  process.exit(1);
+} else {
+  fs.writeFile(`./${fileName}`, fileContents, err => {
+    console.log("begin file write...");
+    if (err) {
+      console.error(err);
+    }
+    console.log("file written successfully");
+  });
 }
-
-fs.writeFile(`./${fileName}`, fileContents, err => {
-  if (err) {
-    console.error(err);
-  }
-  console.log("file written successfully");
-});
