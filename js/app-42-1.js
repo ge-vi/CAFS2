@@ -2,7 +2,7 @@
 
 "use strict";
 
-function createTable(tableData) {
+function createTable(tableData, ...tableColumns) {
 
   if (!Array.isArray(tableData)) {
     throw new Error("not posts array given");
@@ -11,7 +11,7 @@ function createTable(tableData) {
   const htmlTableElement = document.createElement("table");
   tableData.forEach(post => {
     console.log(post);
-    htmlTableElement.appendChild(createTableRow(post, "title", "body"));
+    htmlTableElement.appendChild(createTableRow(post, tableColumns));
   });
   return htmlTableElement;
 }
@@ -23,7 +23,7 @@ function createTable(tableData) {
  * @param fields
  * @returns {HTMLTableRowElement}
  */
-function createTableRow(rowData, ...fields) {
+function createTableRow(rowData, fields) {
   const htmlTableRowElement = document.createElement("tr");
 
   for (const [key, value] of Object.entries(rowData)) {
@@ -47,46 +47,44 @@ function getPosts(url) {
 }
 
 function getUsers(posts) {
-  // todo after users fetch restructure json data so user id is key of array to quickly select whole user
   return new Promise((resolve, reject) => {
     fetch(`https://jsonplaceholder.typicode.com/users`)
       .then(response => response.json())
-      .then(users => {
-        posts = posts.map(post => {
-          post.user = users.find(u => {
-            u.id === post.userId;
-          });
-          resolve(posts);
+      .then(users => remapDataByKey(users, "id"))
+      .then(usersByKey => {
+        let postsWithUsers = posts.map(post => {
+          let user = usersByKey[post.userId];
+          return Object.assign(post, user);
         });
+        resolve(postsWithUsers);
       });
   });
 }
 
-// function resolveUser(posts) {
-//   posts.map(post => {
-//     getUser(post.userId).then(user => {
-//       post.userName = user.name;
-//       return post;
-//     });
-//   });
-// }
-
-/*
-*
-  // create object of objects
-  // so `task._id` is key for task object itself
-  const objOfTasks = arrOfTasks.reduce((acc, task) => {
-    //console.log(JSON.stringify(acc));
-    acc[task._id] = task;
+/**
+ * create object of objects
+ * so for example `dataArr.id` is key for data object itself
+ *
+ * @param dataArr
+ * @param primaryKey
+ * @returns {*}
+ */
+function remapDataByKey(dataArr, primaryKey) {
+  return dataArr.reduce((acc, data) => {
+    let keyValue = data[primaryKey];
+    delete data[primaryKey];
+    acc[keyValue] = data;
     return acc;
   }, {});
-* */
+}
 
 const htmlPostsTable = document.getElementById("js-posts-table");
 
 document.getElementById("js-posts-button")?.addEventListener("click", evt => {
   getPosts("https://jsonplaceholder.typicode.com/posts")
     .then(posts => getUsers(posts))
-    .then(postsWithUsers => htmlPostsTable.appendChild(createTable(postsWithUsers)))
+    .then(postsWithUsers =>
+      htmlPostsTable.appendChild(createTable(postsWithUsers, "title", "body", "name"))
+    )
     .catch(err => console.log(err));
 });
