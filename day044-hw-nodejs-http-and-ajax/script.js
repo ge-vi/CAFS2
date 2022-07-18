@@ -1,5 +1,5 @@
 // EXTERNAL API
-const JSONPLACEHOLDER_URI = 'https://jsonplaceholder.typicode.com/posts';
+const SERVICE_URI = 'http://localhost:8080';
 
 // *** Variables ***
 //-- buttons
@@ -18,17 +18,44 @@ const postsOutput = document.querySelector('#posts');
 //OLD Version AJAX (XMLHttpRequest())
 //-- Load Text File Information
 function loadTextFileXHR() {
-  return;
+
+  const xhr = new XMLHttpRequest();
+
+  xhr.open("GET", `${SERVICE_URI}/sample.txt`);
+  xhr.onload = function () {
+    if (this.status === 200) {
+      textOutput.textContent = `${this.responseText}`;
+    }
+  }
+  xhr.send();
 }
 
 //-- Load User Information
 function loadUserXHR() {
-  return;
+
+  const xhr = new XMLHttpRequest();
+
+  xhr.open("GET", `${SERVICE_URI}/user.json`);
+  xhr.onload = function () {
+    if (this.status === 200) {
+      userOutput.textContent = `${this.responseText}`;
+    }
+  }
+  xhr.send();
 }
 
 //-- Load Users information
 function loadUsersXHR() {
-  return;
+
+  const xhr = new XMLHttpRequest();
+
+  xhr.open("GET", `${SERVICE_URI}/users.json`);
+  xhr.onload = function () {
+    if (this.status === 200) {
+      usersOutput.textContent = `${this.responseText}`;
+    }
+  }
+  xhr.send();
 }
 
 //-- Load Users information
