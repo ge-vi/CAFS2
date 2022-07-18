@@ -1,5 +1,8 @@
 const http = require('node:http');
 const fs = require('node:fs');
+const path = require('node:path');
+
+const PUBLIC_PATH = './data';
 
 
 // Create a local server to receive data from
@@ -24,19 +27,20 @@ server.on('request', (request, response) => {
 
 // internal function
 function processGetRequest(response, resource) {
-  fs.readFile(`./data${resource}`, (err, data) => {
-    if (!err) {
+  resource = path.join(PUBLIC_PATH, path.normalize(resource));
+  fs.readFile(resource, (err, data) => {
+    if (err) {
+      // file not found
+      response.writeHead(404, {'Content-Type': 'text/plain'});
+      response.write(`Not Found ${resource}`);
+      response.end();
+    } else {
       if (resource.endsWith(".json")) {
         response.writeHead(200, {'Content-Type': 'application/json'});
       } else if (resource.endsWith(".txt")) {
         response.writeHead(200, {'Content-Type': 'text/plain'});
       }
       response.end(data);
-    } else {
-      // file not found
-      response.writeHead(404, {'Content-Type': 'text/plain'});
-      response.write(`Not Found ${resource}`);
-      response.end();
     }
   });
 }
