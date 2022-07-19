@@ -2,7 +2,7 @@ const http = require('node:http');
 const fs = require('node:fs');
 const path = require('node:path');
 
-const PUBLIC_PATH = './data';
+const PUBLIC_PATH = './public';
 
 
 // Create a local server to receive data from
@@ -11,7 +11,7 @@ const server = http.createServer();
 // Listen to the request event
 server.on('request', (request, response) => {
 
-  const reqResource = request.url;
+  const reqResource = request.url === "/" ? "index.html" : request.url;
 
   if (request.method === "GET") {
     // Loose CORS policy
