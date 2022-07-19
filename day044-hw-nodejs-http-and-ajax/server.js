@@ -17,11 +17,9 @@ server.on('request', (request, response) => {
     // Loose CORS policy
     response.setHeader("Access-Control-Allow-Origin", "*");
     processGetRequest(response, reqResource);
-  } else if (http.METHODS.includes(request.method)) {
-    // https://www.rfc-editor.org/rfc/rfc9110.html#name-405-method-not-allowed
-    response.writeHead(405, {'Content-Type': 'text/plain'});
-    response.write(`Method Not Allowed ${request.method}`);
-    response.end();
+  } else {
+    response.writeHead(404);
+    return response.end();
   }
 });
 
@@ -31,16 +29,20 @@ function processGetRequest(response, resource) {
   fs.readFile(resource, (err, data) => {
     if (err) {
       // file not found
-      response.writeHead(404, {'Content-Type': 'text/plain'});
-      response.write(`Not Found ${resource}`);
-      response.end();
+      response.writeHead(404);
+      console.log(`Not Found ${resource}`);
+      return response.end();
     } else {
       if (resource.endsWith(".json")) {
         response.writeHead(200, {'Content-Type': 'application/json'});
       } else if (resource.endsWith(".txt")) {
         response.writeHead(200, {'Content-Type': 'text/plain'});
+      } else if (resource.endsWith(".html")) {
+        response.writeHead(200, {'Content-Type': 'text/html'});
+      } else {
+        response.writeHead(200, {'Content-Type': 'application/octet-stream'});
       }
-      response.end(data);
+      return response.end(data);
     }
   });
 }
