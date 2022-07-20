@@ -1,7 +1,5 @@
-const os = require('node:os');
+const {type, cpus, totalmem} = require('node:os');
 const express = require('express');
-const {totalmem} = require("os");
-
 
 /**
  * Naudojant http://expressjs.com router'į sukurkite 3 endpoint'us:
@@ -21,11 +19,11 @@ app.get('/', (req, res) => {
 });
 
 app.get('/os', (req, res) => {
-  res.send(`Computer operating system is: ${os.type()}`);
+  res.send(`Computer operating system is: ${type()}`);
 });
 
 app.get('/cpu', (req, res) => {
-  const cpu = os.cpus();
+  const cpu = cpus();
   res.send(`Computer use "${cpu[0]?.model}" with ${cpu.length} cores`);
 });
 
@@ -44,8 +42,7 @@ app.get('/ram', (req, res) => {
     return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
   }
 
-  const ram = os.totalmem();
-  res.send(`Computer have ${bytesToSize(ram)} RAM`);
+  res.send(`Computer have ${bytesToSize(totalmem())} RAM`);
 });
 
 
