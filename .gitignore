@@ -2,8 +2,8 @@
 .idea/
 
 #
-node_modules
-vendor
+node_modules/
+vendor/
 
 mix-manifest.json
 
